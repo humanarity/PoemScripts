@@ -1,6 +1,6 @@
 
 // If.js -- Rudyard Kipling's poem IF, reimagined in JavaScript ES6
-if( you.wants.includes( 'BeHuman' ) ) {
+if( you ) {
 	// If you can keep your head when all about you   
 	//    Are losing theirs and blaming it on you,   
 
