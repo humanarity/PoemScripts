@@ -65,7 +65,7 @@ if( you ) {
 	// And lose, and start again at your beginnings
 	//    And never breathe a word about your loss;
 
-	you.on( 'loseeverything', loss => { you.startAgain( you.begginings ); delete you.words[ loss ]; } );
+	you.on( 'loseeverything', loss => { you.startAgain( you.beginnings ); delete you.words[ loss ]; } );
 
 	// If you can force your heart and nerve and sinew
 	//    To serve your turn long after they are gone,   
