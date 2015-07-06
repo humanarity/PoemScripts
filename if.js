@@ -47,7 +47,7 @@ if( you ) {
 		: truth.aTrapForFools ? you.bear_it() : you.carry_on() );		
 
 	// Or watch the things you gave your life to, broken,
-	//    And stoop and build â€™em up with worn-out tools:
+	//    And stoop and build 'em up with worn-out tools:
 
 	you.addListener( 'break', broken => you.gaveLifeTo( broken.things ) ? you.routine( broken.things ) : you.carry_on() );
 
@@ -62,8 +62,8 @@ if( you ) {
 	const heap = you.winnings.reduce( ( sum, winning ) => sum+winning, you.start_with );
 	you.allIn( heap, (new PitchAndToss).turn() );
 
-	And lose, and start again at your beginnings
-			And never breathe a word about your loss;
+	// And lose, and start again at your beginnings
+	//    And never breathe a word about your loss;
 
 	you.on( 'loseeverything', loss => { you.startAgain( you.begginings ); delete you.words[ loss ]; } );
 
@@ -90,21 +90,21 @@ if( you ) {
 	};
 	you.sinew.on( 'gone', () => {
 		try {
-			you.conjureForce( you.nerve, 'CONTINUE' );
+			you.conjureForce( you.sinew, 'CONTINUE' );
 		} catch( gone_error ) {
-			you.nerve.fire( 'gone' );
+			you.sinew.fire( 'gone' );
 		} finally {
-			you.conjureForce( you.nerve, 'CONTINUE' );
+			you.conjureForce( you.sinew, 'CONTINUE' );
 		}
 	};
 
 	//And so hold on when there is nothing in you
-	//    Except the Will which says to them: â€˜Hold on!â€™
+	//    Except the Will which says to them: "Hold on!"
 
 	you.on( 'empty', () => you.broadcast( you.Will.say( 'HOLDON' ) ) );
 
 	// If you can talk with crowds and keep your virtue,   
-	//    Or walk with Kingsâ€”nor lose the common touch,
+	//    Or walk with Kings - nor lose the common touch,
 
 	you.startAgent( new RedditAgent( { maintain : [ 'virtue' ] } ) );
 	you.on( 'kingwalking', () => you.stayNotified( new RedditNotifier() ) );
@@ -114,14 +114,15 @@ if( you ) {
 
 	you.damageFrom.lovingFriends = 0;
 	you.damageFrom.foes = 0;
-	you.setCredence( all, min( all.getAverageCredibility(), you.TRUST_THRESHOLD ) );
+	you.credenceTo.all = min( all.getAverageCredibility(), you.TRUST_THRESHOLD );
 
 	//If you can fill the unforgiving minute
-	//    With sixty secondsâ€™ worth of distance run,   
-	//Yours is the Earth and everything thatâ€™s in it,   
-	//   Andâ€”which is moreâ€”youâ€™ll be a Man, my so son.
+	//    With sixty seconds worth of distance run,   
+	//Yours is the Earth and everything that's in it,   
+	//    And - which is more - you'll be a Man, my son.
 
 	you.RUN();
+
 	setTimeout( () => { 
 		you.easeDown();
 		if( you.filledMinute ) { 
@@ -130,5 +131,7 @@ if( you ) {
 			you.celebrate();
 		} else you.retry()
 	}, 60000 );
+
 }
+
 you.start();
