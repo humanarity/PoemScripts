@@ -35,7 +35,7 @@ if( you ) {
 	// If you can meet with Triumph and Disaster
 	//    And treat those two impostors just the same;   
 
-	const handle_triumph = handle_diaster = new ImposterHandler();
+	const handle_triumph = handle_diaster = new ImpostorHandler();
 
 	you.on( 'triumph', handle_triumph );
 	you.on( 'diaster', handle_disaster );
